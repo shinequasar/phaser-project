@@ -20,6 +20,10 @@ class SceneMain extends Phaser.Scene {
     }
     update(){
         //조건문이나 반복문 정의
+        this.char.x+=2; //숫자를 높일수록 빨라짐
+        if(this.char.x>game.config.width){
+            this.char.x=0;
+        }
     }
 
 }
