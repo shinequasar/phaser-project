@@ -8,7 +8,7 @@ class SceneMain extends Phaser.Scene {
     }
     create(){
         //객체들을 정의하는 것
-        this.char = this.add.sprite(game.config.width/2, game.config.height/2, "boy");
+        this.char = this.add.sprite(0, game.config.height/2, "boy");
         var frameNames= this.anims.generateFrameNumbers('boy'); //밑에 key,frame을 생략하고 이렇게 만들어도 됨
         this.anims.create({
             key: 'walk',
@@ -17,13 +17,29 @@ class SceneMain extends Phaser.Scene {
             repeat: -1 //반복횟수 (-1로 두면 영원히 움직임)
         });
         this.char.play('walk');
+        this.doWalk();
+    }
+    doWalk(){
+        this.tweens.add({
+            targets: this.char, 
+            duration: 1000,
+            x:game.config.width, 
+            y:0, 
+            alpha:0, 
+            onComplete:this.onCompleteHandler.bind(this)
+        });
+    }
+    onCompleteHandler(tween, targets, custom){
+        const char = targets[0];
+        char.x = 0;
+        char.y = game.config.height/2;
+        char.alpha =1;
+        this.doWalk();
+        // console.log("완성!");
     }
     update(){
         //조건문이나 반복문 정의
-        this.char.x+=2; //숫자를 높일수록 빨라짐
-        if(this.char.x>game.config.width){
-            this.char.x=0;
-        }
+    
     }
 
 }
