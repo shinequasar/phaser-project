@@ -18,6 +18,28 @@ class SceneMain extends Phaser.Scene {
         });
         this.char.play('walk');
         this.doWalk();
+
+        // this.text1 = this.add.text(
+        //     game.config.width/2,
+        //     game.config.height/2,
+        //     "HELLO I'M WANT",
+        //     {fontFamily:'Anton', color:'#aa00ff', fontSize:'40px'});
+        // this.text1.setOrigin(.5,.5);
+
+        var textConfig={
+            fontFamily:'Anton',
+            fontSize:'40px',
+            color:'#e2fe0b'
+        }
+            this.text1=this.add.text(
+                game.config.width/2,
+                game.config.height/2,
+                "HELLO I'M WANT",
+                textConfig);
+                
+            this.text1.setOrigin(.5,.5);
+            this.text1.setStroke(white,1);
+            this.text1.setShadow(2,2,white,1,false,true);
     }
     doWalk(){
         this.tweens.add({
