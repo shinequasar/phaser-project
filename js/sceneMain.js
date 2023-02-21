@@ -9,16 +9,10 @@ class SceneMain extends Phaser.Scene {
     create(){
         //객체들을 정의하는 것
         this.char = this.add.sprite(game.config.width/2, game.config.height/2, "boy");
+        var frameNames= this.anims.generateFrameNumbers('boy'); //밑에 key,frame을 생략하고 이렇게 만들어도 됨
         this.anims.create({
             key: 'walk',
-            frames: [
-                { key: 'boy',frame:0 },
-                { key: 'boy',frame:1 },
-                { key: 'boy',frame:2 },
-                { key: 'boy',frame:3 },
-                { key: 'boy',frame:4 },
-                { key: 'boy',frame:5 },
-            ],
+            frames: frameNames,
             frameRate: 16, //속도
             repeat: -1 //반복횟수 (-1로 두면 영원히 움직임)
         });
