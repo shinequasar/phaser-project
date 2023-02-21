@@ -6,6 +6,8 @@ class SceneMain extends Phaser.Scene {
         //이미지나 소리를 로드하는 곳
         // this.load.spritesheet('boy', 'images/boy.png', { frameWidth: 120, frameHeight: 200 });
         // this.load.image("face","images/face.png");
+
+        this.load.audio('cat',['sounds/meow.mp3','sounds/meow.ogg']);
     }
     create(){
         //객체들을 정의하는 것
@@ -13,6 +15,9 @@ class SceneMain extends Phaser.Scene {
         // this.face.setInteractive();
         // this.face.on('pointerdown', this.onDown,this);
         // this.face.on('pointerup', this.onUp,this);
+
+        this.catSound = this.sound.add('cat');
+        this.catSound.play();
 
         //동그라미 그리기
         this.graphics= this.add.graphics();
