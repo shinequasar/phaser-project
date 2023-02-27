@@ -9,6 +9,9 @@ class SceneMain extends Phaser.Scene {
     create(){
       var road = new Road({scene:this});
       road.x = game.config.width/2;
+
+      var car = this.add.image(0,0,"cars");
+      Align.center(car);
     }
     update(){
     
