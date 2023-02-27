@@ -7,12 +7,29 @@
     </script>
     <script src="js/main.js"></script>
     <script src="js/sceneMain.js"></script>
+    <script src="js/constants.js"></script>
+    <script src="js/classes/mc/model.js"></script>
+    <script src="js/classes/mc/controller.js"></script>
     <script src="js/classes/road.js"></script>
     <script src="js/classes/util/align.js"></script>
     <script src="js/classes/util/collision.js"></script>
 
 </head>
 <body>
-<div id='phaser-game'></div>
+    <h3 id="title">클릭해서 피하세요</h1>
+    <div id='phaser-game'></div>
+    <h3 id="title">💛 피할 수 있다면 피해보시던가 💛</h1>
+
 </body>
+<style>
+#title {
+    text-align: center;
+}
+#phaser-game{
+    text-align: center;
+}
+body{
+    background-color: darkgray;
+}
+</style>
 </html>

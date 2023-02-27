@@ -15,6 +15,10 @@ class SceneMain extends Phaser.Scene {
       this.road = new Road({scene:this});
       this.road.x = game.config.width/2;
       this.road.makeLines();
+      
+      emitter = new Phaser.Events.EventEmitter();
+      controller = new Controller();
+      model.score = 100;
     }
     update(){
       this.road.moveLines();
