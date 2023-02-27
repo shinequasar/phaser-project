@@ -71,6 +71,11 @@ class Road extends Phaser.GameObjects.Container{
     }
     moveObject(){ //만약 객체가 게임화면 아래에 위치하게되면 객체삭제하고 새 객체 생성하기
         this.object.y += this.vSpace/this.object.speed;
+        if(Collision.checkCollide(this.car, this.object)==true){
+            this.car.alpha = .5;
+        }else{
+            this.car.alpha = 1;
+        }
         if(this.object.y > game.config.height){
             this.object.destroy();
             this.addObject();
