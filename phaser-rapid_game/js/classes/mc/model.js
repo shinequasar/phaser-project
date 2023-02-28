@@ -4,7 +4,7 @@ class Model{
     }
     set score(val){
         this._score = val;
-        console.log("점수가 기록되었습니다!")
+        // console.log("점수가 기록되었습니다!");
         emitter.emit(G.SCORE_UPDATED);
     }
     get score(){

@@ -17,10 +17,6 @@ class SceneMain extends Phaser.Scene {
 
     }
     create(){
-        //준비
-        emitter = new Phaser.Events.EventEmitter();
-        controller = new Controller();
-
         this.sb = new ScoreBox({scene:this});
         this.sb.x = game.config.width-60;
         this.sb.y = 50;
@@ -35,8 +31,10 @@ class SceneMain extends Phaser.Scene {
         this.alignGrid.showNumbers();
         this.alignGrid.placeAtIndex(4,this.sb);
 
+        //버튼 텍스트 스타일
+        const fireText = {color:'black', fontSize:20};
         const flatButton = new FlatButton({scene:this, key:'button1', text:"발사!", 
-        x:240, y:100, event:'button_pressed', params:'fire_lasers'});
+        x:240, y:100, event:'button_pressed', params:'fire_lasers', textConfig:fireText});
         const flatButton2 = new FlatButton({scene:this, key:'button2', text:"부수기!", 
         x:240, y:300, event:'button_pressed', params:'self_descruct'});
 
@@ -53,6 +51,7 @@ class SceneMain extends Phaser.Scene {
     }
     buttonPressed(params){
       console.log(params);
+      this.scene.start("SceneOver");
     }
     update(){
       this.road.moveLines();

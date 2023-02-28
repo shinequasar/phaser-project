@@ -17,7 +17,11 @@ class FlatButton extends Phaser.GameObjects.Container{
         this.add(this.back);  //버튼을 텍스트 뒤에 추가
 
         if(config.text){
-            this.text1 = this.scene.add.text(0,0,config.text);
+            if(config.textConfig) 
+                this.text1 = this.scene.add.text(0,0,config.text, config.textConfig);
+            else 
+                this.text1 = this.scene.add.text(0,0,config.text);
+
             this.text1.setOrigin(0.5,0.5);
             this.add(this.text1);
         }

@@ -8,16 +8,16 @@ class Road extends Phaser.GameObjects.Container{
 
         // this.back.displayWidth = game.config.width * .5;
         // this.back.scaleY = this.back.scaleX;
-        Align.scaleTodGameW(this.back, .5);
+        Align.scaleToGameW(this.back, .5);
         this.setSize(this.back.displayWidth, game.config.height);
-        console.log(this);
+        // console.log(this); //road 객체
 
         //차선 만들기
         this.lineGroup = this.scene.add.group();
         this.count = 0;
         //displayWidth 음수면 왼쪽 차선
         this.car = this.scene.add.sprite(this.displayWidth/4, game.config.height*.9,"cars"); 
-        Align.scaleTodGameW(this.car, .15); //차 크기
+        Align.scaleToGameW(this.car, .15); //차 크기
         this.add(this.car);
         this.addObject();
 
@@ -42,7 +42,7 @@ class Road extends Phaser.GameObjects.Container{
         //50%의 확률로 추가 장애물 위치 +- 결정(좌우위치)
         let lane = Math.random()*100;
         if(lane<50) this.object.x = this.displayWidth/4; 
-        Align.scaleTodGameW(this.object, scale);
+        Align.scaleToGameW(this.object, scale);
         this.add(this.object);
     }
     chageLanes(){

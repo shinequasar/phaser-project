@@ -17,7 +17,7 @@ window.onload = () => {
             parent: 'phaser-game',
             // backgroundColor: '#fae0ae',
             backgroundColor: '#555',
-            scene: [SceneMain]
+            scene: [SceneTitle,SceneMain,SceneOver]
         };
     }else{
         var config = {
@@ -25,7 +25,7 @@ window.onload = () => {
             width: window.innerWidth,
             height: window.innerHeight,
             parent: 'phaser-game',
-            scene: [SceneMain]
+            scene: [SceneTitle,SceneMain,SceneOver]
         };
     }
 
