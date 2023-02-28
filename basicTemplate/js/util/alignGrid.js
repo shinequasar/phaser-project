@@ -33,8 +33,8 @@ class AlignGrid{
     }
     //x,y행 둘다 지정해 위치시키는 메서드
     placeAt(xx,yy,obj){
-        const x2 = this.cw*xx;
-        const y2 = this.ch*yy;
+        const x2 = this.cw*xx + this.cw/2;
+        const y2 = this.ch*yy + this.ch/2;
   
         obj.x = x2;
         obj.y = y2;
@@ -52,7 +52,7 @@ class AlignGrid{
         for(let i=0; i<this.config.rows; i++){
             for(let j=0; j<this.config.cols; j++){
                 const numText = this.scene.add.text(0,0,count,{color:'#00ff00'});
-                numText.setOrigin(-3,-3);
+                numText.setOrigin(0.5,0.5);
                 this.placeAtIndex(count, numText);
                 count++;
             }

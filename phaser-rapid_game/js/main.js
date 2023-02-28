@@ -12,8 +12,8 @@ window.onload = () => {
     if (isMobile == -1) {
         var config = {
             type: Phaser.AUTO,
-            width: 480 ,
-            height: 640,
+            width: 680 ,
+            height: 840,
             parent: 'phaser-game',
             // backgroundColor: '#fae0ae',
             backgroundColor: '#555',
