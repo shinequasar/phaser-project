@@ -1,4 +1,5 @@
 class Constants{
+    //함수명을 상수로 기록해둠
     constructor(){
         this.SET_SCORE = "setScore";
         this.UP_POINTS = "upPoints";

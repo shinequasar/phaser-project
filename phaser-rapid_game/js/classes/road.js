@@ -73,10 +73,12 @@ class Road extends Phaser.GameObjects.Container{
         this.object.y += this.vSpace/this.object.speed;
         if(Collision.checkCollide(this.car, this.object)==true){
             this.car.alpha = .5;
+            emitter.emit(G.UP_POINTS,-1);
         }else{
             this.car.alpha = 1;
         }
-        if(this.object.y > game.config.height){
+        if(this.object.y > game.config.height){ //모두 피하고 화면밖으로 벗어나면
+            emitter.emit(G.UP_POINTS,10);
             this.object.destroy();
             this.addObject();
         }
