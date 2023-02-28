@@ -6,7 +6,6 @@ class SceneOver extends Phaser.Scene {
     {
     	this.load.image("title","/phaser-rapid_game/images/title.png")
         this.load.image("button1","/phaser-rapid_game/images/ui/buttons/2/2.png");
-        this.load.image("button2","/phaser-rapid_game/images/ui/buttons/2/5.png");
     }
     create() {
         this.alignGrid = new AlignGrid({rows:11, cols:11,scene:this});
@@ -24,7 +23,7 @@ class SceneOver extends Phaser.Scene {
         emitter.on('start_game', this.startGame, this);
     }
     startGame(){
-        this.scene.start('SceneTitle');
+        this.scene.start('SceneMain');
     }
     update() {}
 }

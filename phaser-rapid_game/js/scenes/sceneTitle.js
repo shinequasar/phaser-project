@@ -12,6 +12,7 @@ class SceneTitle extends Phaser.Scene {
         //준비-모델과 컨트롤러는 맨 첫 씬에 있어야 함
         emitter = new Phaser.Events.EventEmitter();
         controller = new Controller();
+        model.score = 0;
 
         this.alignGrid = new AlignGrid({rows:11, cols:11,scene:this});
         // this.alignGrid.showNumbers();
@@ -21,8 +22,8 @@ class SceneTitle extends Phaser.Scene {
         this.alignGrid.placeAtIndex(38,title);
 
         const fireText = {color:'black'};
-        const btnStart = new FlatButton({scene:this, key:'button1', text:'시작하기',textConfig:fireText, event:'start_game'})
-        this.alignGrid.placeAtIndex(60,btnStart);
+        const btnStart = new FlatButton({scene:this, key:'button1', text:'시작하기', textConfig:fireText, event:'start_game'})
+        this.alignGrid.placeAtIndex(60, btnStart);
         
         emitter.on('start_game', this.startGame, this);
     }

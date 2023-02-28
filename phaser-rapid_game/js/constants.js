@@ -4,5 +4,7 @@ class Constants{
         this.SET_SCORE = "setScore";
         this.UP_POINTS = "upPoints";
         this.SCORE_UPDATE = "scoreUpdated";
+        this.PLAY_SOUND = "playSound";
+        this.MUSIC_CHANGED = "musicChanged";
     }
 }

@@ -15,8 +15,14 @@ class SceneMain extends Phaser.Scene {
        this.load.image("button1","/phaser-rapid_game/images/ui/buttons/2/1.png");
        this.load.image("button2","/phaser-rapid_game/images/ui/buttons/2/5.png");
 
+       this.load.audio("cat",["/phaser-rapid_game/audio/meow.mp3","/phaser-rapid_game/audio/meow.ogg"]);
+       this.load.audio("backgroundMusic",["/phaser-rapid_game/audio/background.mp3","/phaser-rapid_game/audio/background.ogg"]);
+
     }
     create(){
+        const mediaManager = new MediaManager({scene:this});
+        mediaManager.setBackgroundMusic('backgroundMusic');
+
         this.sb = new ScoreBox({scene:this});
         this.sb.x = game.config.width-60;
         this.sb.y = 50;
@@ -34,9 +40,9 @@ class SceneMain extends Phaser.Scene {
         //버튼 텍스트 스타일
         const fireText = {color:'black', fontSize:20};
         const flatButton = new FlatButton({scene:this, key:'button1', text:"발사!", 
-        x:240, y:100, event:'button_pressed', params:'fire_lasers', textConfig:fireText});
+        x:120, y:100, event:'button_pressed', params:'fire_lasers', textConfig:fireText});
         const flatButton2 = new FlatButton({scene:this, key:'button2', text:"부수기!", 
-        x:240, y:300, event:'button_pressed', params:'self_descruct'});
+        x:120, y:200, event:'button_pressed', params:'self_descruct'});
 
         emitter.on('button_pressed', this.buttonPressed, this);
         //그리드로 원트배치
@@ -51,7 +57,8 @@ class SceneMain extends Phaser.Scene {
     }
     buttonPressed(params){
       console.log(params);
-      this.scene.start("SceneOver");
+      model.musicOn = !model.musicOn;
+      // this.scene.start("SceneOver");
     }
     update(){
       this.road.moveLines();

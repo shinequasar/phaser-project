@@ -31,5 +31,6 @@ window.onload = () => {
 
     G = new Constants();
     model = new Model();
+    model.isMobile = isMobile;
     game = new Phaser.Game(config);
 }
