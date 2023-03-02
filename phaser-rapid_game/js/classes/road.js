@@ -71,15 +71,20 @@ class Road extends Phaser.GameObjects.Container{
             }.bind(this));
         }
     }
+    goGameOver(){
+        this.scene.start("SceneOver");
+    }
     moveObject(){ //만약 객체가 게임화면 아래에 위치하게되면 객체삭제하고 새 객체 생성하기
         if(model.gameOver == true) return; //만약 부딪히면 true
         this.object.y += this.vSpace/this.object.speed;
         if(Collision.checkCollide(this.car, this.object)==true){
-            this.car.alpha = .5;
+            // this.car.alpha = .5;
             emitter.emit(G.UP_POINTS,-1);
             emitter.emit(G.PLAY_SFXSOUND,"boom");
+            this.scene.tweens.add({targets: this.car,duration: 700,y:game.config.height, angle:-270});
+            this.scene.time.addEvent({ delay: 1200, callback: this.goGameOver, callbackScope: this.scene, loop: false });
         }else{
-            this.car.alpha = 1;
+            // this.car.alpha = 1;
         }
         if(this.object.y > game.config.height){ //모두 피하고 화면밖으로 벗어나면
             emitter.emit(G.UP_POINTS,10);
