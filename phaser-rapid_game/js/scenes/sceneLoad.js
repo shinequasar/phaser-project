@@ -9,7 +9,7 @@ class SceneLoad extends Phaser.Scene {
         this.load.on('progress', this.onProgress, this);
 
         this.load.image("road", "/phaser-rapid_game/images/road.jpg");
-        this.load.image("cars", "/phaser-rapid_game/images/cars.png",{frameWidth:60, frameHeight:126});
+        this.load.spritesheet("cars", "/phaser-rapid_game/images/cars.png",{frameWidth:60, frameHeight:126});
         this.load.image("line", "/phaser-rapid_game/images/line.png");
         this.load.image("pcar1", "/phaser-rapid_game/images/pcar1.png");
         this.load.image("pcar2", "/phaser-rapid_game/images/pcar2.png");
