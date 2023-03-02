@@ -3,12 +3,13 @@ class SceneLoad extends Phaser.Scene {
         super('SceneLoad');
     }
     preload(){
-        this.bar = new Bar({scene:this, x:100,y:320});
+        this.bar = new Bar({scene:this, x:game.config.width/3,y:game.config.height/2});
         this.progText = this.add.text(game.config.width/2, game.config.height/2,"0%",{color:'#fff', fontSize:game.config.width/20});
         this.progText.setOrigin(0.5,0.5); //화면 정중앙 배치
         this.load.on('progress', this.onProgress, this);
 
         this.load.image("road", "/phaser-rapid_game/images/road.jpg");
+        this.load.image("titleBack", "/phaser-rapid_game/images/titleBack.jpg");
         this.load.spritesheet("cars", "/phaser-rapid_game/images/cars.png",{frameWidth:60, frameHeight:126});
         this.load.image("line", "/phaser-rapid_game/images/line.png");
         this.load.image("pcar1", "/phaser-rapid_game/images/pcar1.png");

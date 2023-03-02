@@ -5,7 +5,9 @@ class Model{
         this._musicOn=true;
         this.gameOver=false;
         this.sfxVolume=1;
+        this.speed=1;
     }
+   
     set volumeSet(val){
         this.sfxVolume = val;
     }

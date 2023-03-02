@@ -9,6 +9,8 @@ class SceneMain extends Phaser.Scene {
         emitter = new Phaser.Events.EventEmitter();
         controller = new Controller();
         model.gameOver = false;
+        model.speed=1;
+        model.score=0;
 
         //도로
         this.road = new Road({scene:this});
@@ -32,7 +34,12 @@ class SceneMain extends Phaser.Scene {
         this.sb = new ScoreBox({scene:this});
         this.sb.x = game.config.width/2;
         this.sb.y = 50;
-        model.score = 0;
+        emitter.on(G.SCORE_UPDATED, this.scoreUpdated, this);
+    }
+    scoreUpdated(){
+      if(model.score/5 == Math.floor(model.score/5)){
+        model.speed+=0.25;
+      }
     }
     update(){
       //좌

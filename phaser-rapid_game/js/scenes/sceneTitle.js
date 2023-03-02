@@ -20,10 +20,13 @@ class SceneTitle extends Phaser.Scene {
 
         this.alignGrid = new AlignGrid({rows:11, cols:11,scene:this});
         // this.alignGrid.showNumbers();
+
+        //배경 사진
+        this.backImage = this.add.image(game.config.width/2, game.config.height/2,"titleBack");
         
         //타이틀배치
         const title = this.add.image(0,0,'title');
-        Align.scaleToGameW(title, .9);
+        Align.scaleToGameW(title, .7);
         this.alignGrid.placeAtIndex(27,title);
 
         //원트배치
