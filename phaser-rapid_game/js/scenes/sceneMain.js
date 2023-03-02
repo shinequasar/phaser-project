@@ -10,13 +10,15 @@ class SceneMain extends Phaser.Scene {
        this.load.image("pcar2", "/phaser-rapid_game/images/pcar2.png");
        this.load.image("cone", "/phaser-rapid_game/images/cone.png");
        this.load.image("barrier", "/phaser-rapid_game/images/barrier.png");
-       this.load.image("want", "/phaser-rapid_game/images/want.png");
 
        this.load.image("button1","/phaser-rapid_game/images/ui/buttons/2/1.png");
        this.load.image("button2","/phaser-rapid_game/images/ui/buttons/2/5.png");
 
        this.load.audio("cat",["/phaser-rapid_game/audio/meow.mp3","/phaser-rapid_game/audio/meow.ogg"]);
        this.load.audio("backgroundMusic",["/phaser-rapid_game/audio/background.mp3","/phaser-rapid_game/audio/background.ogg"]);
+       this.load.audio("boom",["/phaser-rapid_game/audio/boom.mp3","/phaser-rapid_game/audio/boom.ogg"]);
+       this.load.audio("whoosh",["/phaser-rapid_game/audio/whoosh.mp3","/phaser-rapid_game/audio/whoosh.ogg"]);
+
 
        this.load.image("toggleBack", "/phaser-rapid_game/images/ui/toggles/4.png");
        this.load.image("sfxOff", "/phaser-rapid_game/images/ui/icons/sfx_off.png");
@@ -46,26 +48,7 @@ class SceneMain extends Phaser.Scene {
 
         //버튼 텍스트 스타일
         const fireText = {color:'black', fontSize:20};
-        const flatButton = new FlatButton({scene:this, key:'button1', text:"발사!", x:120, y:100, event:'button_pressed', params:'fire_lasers', textConfig:fireText});
-        const flatButton2 = new FlatButton({scene:this, key:'button2', text:"부수기!", x:120, y:200, event:'button_pressed', params:'self_descruct'});
-        const toggleButton = new ToggleButton({scene:this, backKey:'toggleBack', onIcon:'musicOn', offIcon:'musicOff',event:G.TOGGLE_MUSIC,x:50,y:300});
-
-
-        emitter.on('button_pressed', this.buttonPressed, this);
-        //그리드로 원트배치
-        // const gridConfig = {rows:5, cols:5, scene:this};
-        // const alignGrid = new AlignGrid(gridConfig);
-        // alignGrid.showNumbers();
-
-        // this.want = this.add.sprite(0,0,"want");
-        // // alignGrid.placeAt(4.5,1,this.want);
-        // alignGrid.placeAtIndex(9.5,this.want);
-        // Align.scaleTodGameW(this.want, .2);
-    }
-    buttonPressed(params){
-      console.log(params);
-      model.musicOn = !model.musicOn;
-      // this.scene.start("SceneOver");
+        const soundButton = new SoundButtons({scene:this});
     }
     update(){
       this.road.moveLines();

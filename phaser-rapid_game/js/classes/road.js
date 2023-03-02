@@ -46,6 +46,8 @@ class Road extends Phaser.GameObjects.Container{
         this.add(this.object);
     }
     chageLanes(){
+        if(model.gameOver == true) return; //만약 부딪히면 true
+        emitter.emit(G.PLAY_SOUND,"whoosh");
         if(this.car.x>0) this.car.x = -this.displayWidth/4;
         else this.car.x = this.displayWidth/4;
     }
@@ -70,10 +72,12 @@ class Road extends Phaser.GameObjects.Container{
         }
     }
     moveObject(){ //만약 객체가 게임화면 아래에 위치하게되면 객체삭제하고 새 객체 생성하기
+        if(model.gameOver == true) return; //만약 부딪히면 true
         this.object.y += this.vSpace/this.object.speed;
         if(Collision.checkCollide(this.car, this.object)==true){
             this.car.alpha = .5;
             emitter.emit(G.UP_POINTS,-1);
+            emitter.emit(G.PLAY_SFXSOUND,"boom");
         }else{
             this.car.alpha = 1;
         }

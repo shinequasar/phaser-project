@@ -3,6 +3,14 @@ class Model{
         this._score = 0;
         this._soundOn=true;
         this._musicOn=true;
+        this.gameOver=false;
+        this.sfxVolume=1;
+    }
+    set volumeSet(val){
+        this.sfxVolume = val;
+    }
+    get volumeGet(){
+        return this.sfxVolume;
     }
     set musicOn(val){
         this._musicOn = val;

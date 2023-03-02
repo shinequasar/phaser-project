@@ -23,7 +23,7 @@ class SceneOver extends Phaser.Scene {
         emitter.on('start_game', this.startGame, this);
     }
     startGame(){
-        this.scene.start('SceneMain');
+        this.scene.start('Sceneemitter.onMain');
     }
     update() {}
 }

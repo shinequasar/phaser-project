@@ -2,6 +2,7 @@ class MediaManager{
     constructor(config){
         this.scene = config.scene;
         emitter.on(G.PLAY_SOUND, this.playSound, this);
+        emitter.on(G.PLAY_SFXSOUND, this.playSFXSound, this);
         emitter.on(G.MUSIC_CHANGED, this.musicChanged, this);
     }
     musicChanged(){
@@ -15,6 +16,13 @@ class MediaManager{
     playSound(key){
         if(model._soundOn == true){
             const sound = this.scene.sound.add(key);
+            sound.play();
+        }
+    }
+    playSFXSound(key){
+        if(model._soundOn == true){
+            const sound = this.scene.sound.add(key);
+            sound.setVolume(0.03);
             sound.play();
         }
     }
