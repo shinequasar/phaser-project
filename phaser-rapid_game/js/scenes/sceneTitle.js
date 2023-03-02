@@ -15,7 +15,7 @@ class SceneTitle extends Phaser.Scene {
         controller = new Controller();
         model.score = 0;
 
-        const mediaManager = new MediaManager({scene:this});
+        mediaManager = new MediaManager({scene:this});
         mediaManager.setBackgroundMusic('backgroundMusic');
 
         this.alignGrid = new AlignGrid({rows:11, cols:11,scene:this});

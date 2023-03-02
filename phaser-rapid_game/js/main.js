@@ -3,6 +3,7 @@ var game;
 var model;
 var controller;
 var emitter;
+var mediaManager;
 var G;
 window.onload = () => {
     var isMobile = navigator.userAgent.indexOf("Mobile");
@@ -28,7 +29,6 @@ window.onload = () => {
             scene: [SceneLoad,SceneTitle,SceneMain,SceneOver]
         };
     }
-
     G = new Constants();
     model = new Model();
     model.isMobile = isMobile;
