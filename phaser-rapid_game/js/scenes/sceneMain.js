@@ -27,6 +27,7 @@ class SceneMain extends Phaser.Scene {
         //버튼 텍스트 스타일
         const fireText = {color:'black', fontSize:20};
         const soundButton = new SoundButtons({scene:this});
+        
     }
     update(){
       this.road.moveLines();

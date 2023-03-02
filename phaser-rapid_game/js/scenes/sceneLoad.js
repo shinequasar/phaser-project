@@ -3,6 +3,7 @@ class SceneLoad extends Phaser.Scene {
         super('SceneLoad');
     }
     preload(){
+        this.bar = new Bar({scene:this, x:100,y:320});
         this.progText = this.add.text(game.config.width/2, game.config.height/2,"0%",{color:'#fff', fontSize:game.config.width/20});
         this.progText.setOrigin(0.5,0.5); //화면 정중앙 배치
         this.load.on('progress', this.onProgress, this);
@@ -31,6 +32,7 @@ class SceneLoad extends Phaser.Scene {
     }
     onProgress(value){
         console.log(value);
+        this.bar.setPercent(value);
         let per = Math.floor(value*100);
         this.progText.setText("로딩 중 : "+per+"%");
     }
