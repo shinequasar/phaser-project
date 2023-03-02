@@ -16,7 +16,7 @@ window.onload = () => {
             height: 840,
             parent: 'phaser-game',
             backgroundColor: '#555',
-            scene: [SceneTitle,SceneMain,SceneOver]
+            scene: [SceneLoad,SceneTitle,SceneMain,SceneOver]
         };
     }else{
         var config = {
@@ -25,7 +25,7 @@ window.onload = () => {
             height: window.innerHeight,
             parent: 'phaser-game',
             backgroundColor: '#555',
-            scene: [SceneTitle,SceneMain,SceneOver]
+            scene: [SceneLoad,SceneTitle,SceneMain,SceneOver]
         };
     }
 

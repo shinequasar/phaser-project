@@ -1,6 +1,6 @@
 class SceneTitle extends Phaser.Scene {
     constructor() {
-        super('SceneTiTle');
+        super('SceneTitle');
     }
     preload()
     {
@@ -8,7 +8,6 @@ class SceneTitle extends Phaser.Scene {
         this.load.image("button1","/phaser-rapid_game/images/ui/buttons/2/4.png");
         this.load.image("button2","/phaser-rapid_game/images/ui/buttons/2/5.png");
         this.load.image("want", "/phaser-rapid_game/images/want.png");
-
     }
     create() {
         //준비-모델과 컨트롤러는 맨 첫 씬에 있어야 함
@@ -19,10 +18,12 @@ class SceneTitle extends Phaser.Scene {
         this.alignGrid = new AlignGrid({rows:11, cols:11,scene:this});
         // this.alignGrid.showNumbers();
         
+        //타이틀배치
         const title = this.add.image(0,0,'title');
         Align.scaleToGameW(title, .9);
         this.alignGrid.placeAtIndex(27,title);
 
+        //원트배치
         const want = this.add.sprite(0,0,"want");
         this.alignGrid.placeAtIndex(60,want);
         Align.scaleToGameW(want, .5);
@@ -31,13 +32,6 @@ class SceneTitle extends Phaser.Scene {
         const btnStart = new FlatButton({scene:this, key:'button1', text:'시작하기', textConfig:fireText, event:'start_game'})
         this.alignGrid.placeAtIndex(104, btnStart);
 
-        //그리드로 원트배치
-        // const gridConfig = {rows:10, cols:10, scene:this};
-        // const alignGrid = new AlignGrid(gridConfig);
-        // alignGrid.showNumbers();
-
-        
-        
         emitter.on('start_game', this.startGame, this);
     }
     startGame(){
