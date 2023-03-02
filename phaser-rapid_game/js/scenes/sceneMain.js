@@ -18,7 +18,7 @@ class SceneMain extends Phaser.Scene {
        this.load.audio("cat",["/phaser-rapid_game/audio/meow.mp3","/phaser-rapid_game/audio/meow.ogg"]);
        this.load.audio("backgroundMusic",["/phaser-rapid_game/audio/background.mp3","/phaser-rapid_game/audio/background.ogg"]);
 
-       this.load.image("toggleBack", "/phaser-rapid_game/images/ui/toggles/1.png");
+       this.load.image("toggleBack", "/phaser-rapid_game/images/ui/toggles/4.png");
        this.load.image("sfxOff", "/phaser-rapid_game/images/ui/icons/sfx_off.png");
        this.load.image("sfxOn", "/phaser-rapid_game/images/ui/icons/sfx_on.png");
        this.load.image("musicOn", "/phaser-rapid_game/images/ui/icons/music_on.png");
@@ -41,15 +41,15 @@ class SceneMain extends Phaser.Scene {
         this.road.makeLines();
 
         this.alignGrid = new AlignGrid({scene:this,rows:5,cols:5});
-        // this.alignGrid.showNumbers();
+        this.alignGrid.showNumbers();
         this.alignGrid.placeAtIndex(4,this.sb);
 
         //버튼 텍스트 스타일
         const fireText = {color:'black', fontSize:20};
-        const flatButton = new FlatButton({scene:this, key:'button1', text:"발사!", 
-        x:120, y:100, event:'button_pressed', params:'fire_lasers', textConfig:fireText});
-        const flatButton2 = new FlatButton({scene:this, key:'button2', text:"부수기!", 
-        x:120, y:200, event:'button_pressed', params:'self_descruct'});
+        const flatButton = new FlatButton({scene:this, key:'button1', text:"발사!", x:120, y:100, event:'button_pressed', params:'fire_lasers', textConfig:fireText});
+        const flatButton2 = new FlatButton({scene:this, key:'button2', text:"부수기!", x:120, y:200, event:'button_pressed', params:'self_descruct'});
+        const toggleButton = new ToggleButton({scene:this, backKey:'toggleBack', onIcon:'musicOn', offIcon:'musicOff',event:G.TOGGLE_MUSIC,x:50,y:300});
+
 
         emitter.on('button_pressed', this.buttonPressed, this);
         //그리드로 원트배치

@@ -6,5 +6,7 @@ class Constants{
         this.SCORE_UPDATE = "scoreUpdated";
         this.PLAY_SOUND = "playSound";
         this.MUSIC_CHANGED = "musicChanged";
+        this.TOGGLE_MUSIC = "toggleMusic";
+        this.TOGGLE_SOUND = "toggleSound";
     }
 }
