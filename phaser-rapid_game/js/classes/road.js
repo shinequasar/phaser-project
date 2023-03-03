@@ -33,12 +33,12 @@ class Road extends Phaser.GameObjects.Container{
             {key:'pcar2', speed:14, scale:8},
             {key:'cone', speed:20, scale:5},
             {key:'barrier', speed:20, scale:8},
-            {key:'img1', speed:27, scale:18},
-            {key:'img2', speed:22, scale:15},
-            {key:'img3', speed:18, scale:20},
-            {key:'img4', speed:15, scale:20},
+            {key:'img1', speed:22, scale:18},
+            {key:'img2', speed:18, scale:15},
+            {key:'img3', speed:14, scale:20},
+            {key:'img4', speed:10, scale:20},
             {key:'img5', speed:25, scale:17},
-            {key:'img6', speed:30, scale:18}
+            {key:'img6', speed:28, scale:18}
         ];
 
         var index = Math.floor(Math.random()*9);
@@ -96,9 +96,9 @@ class Road extends Phaser.GameObjects.Container{
             this.scene.time.addEvent({ delay: 1200, callback: this.goGameOver, callbackScope: this.scene, loop: false });
         }else{
             // this.car.alpha = 1;
+            emitter.emit(G.UP_POINTS,1);
         }
         if(this.object.y > game.config.height){ //모두 피하고 화면밖으로 벗어나면
-            emitter.emit(G.UP_POINTS,13);
             this.object.destroy();
             this.addObject();
         }
