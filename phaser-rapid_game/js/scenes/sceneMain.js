@@ -36,9 +36,11 @@ class SceneMain extends Phaser.Scene {
         this.sb.y = 50;
         emitter.on(G.SCORE_UPDATED, this.scoreUpdated, this);
     }
-    scoreUpdated(){
+    scoreUpdated(){ 
       if(model.score/5 == Math.floor(model.score/5)){
         model.speed+=0.25;
+        if(model.speed>1.5)//장애물 속도 상한선
+            model.speed=1.5;
       }
     }
     update(){

@@ -6,7 +6,7 @@ class SceneLoad extends Phaser.Scene {
         // this.load.setBaseURL("https://want-game.netlify.app");
 
         this.bar = new Bar({scene:this, x:game.config.width/3,y:game.config.height/2});
-        this.progText = this.add.text(game.config.width/2, game.config.height/2,"0%",{color:'#fff', fontSize:game.config.width/20});
+        this.progText = this.add.text(game.config.width/2, game.config.height/2,"0%",{color:'#fff', fontSize:game.config.width/18});
         this.progText.setOrigin(0.5,0.5); //화면 정중앙 배치
         this.load.on('progress', this.onProgress, this);
 
@@ -30,10 +30,10 @@ class SceneLoad extends Phaser.Scene {
         this.load.image("toggleBack", "/images/ui/toggles/4.png");
         this.load.image("sfxOff", "/images/ui/icons/sfx_off.png");
         this.load.image("sfxOn", "/images/ui/icons/sfx_on.png");
-        this.load.image("musicOn", "/phaser/ui/icons/music_on.png");
+        this.load.image("musicOn", "/images/ui/icons/music_on.png");
         this.load.image("musicOff", "/images/ui/icons/music_off.png");
 
-        this.load.bitmapFont("pixelFont", "/phaser-rapid_game/font/font.xml");   
+        // this.load.bitmapFont("pixelFont", "/phaser-rapid_game/font/font.xml");   
     }
     onProgress(value){
         console.log(value);

@@ -81,14 +81,15 @@ class Road extends Phaser.GameObjects.Container{
         if(Collision.checkCollide(this.car, this.object)==true){
             // this.car.alpha = .5;
             emitter.emit(G.UP_POINTS,-1);
-            emitter.emit(G.PLAY_SFXSOUND,"boom");
+            mediaManager.playSFXSound("boom");
+            // emitter.emit(G.PLAY_SFXSOUND,"boom");
             this.scene.tweens.add({targets: this.car,duration: 700,y:game.config.height, angle:-270});
             this.scene.time.addEvent({ delay: 1200, callback: this.goGameOver, callbackScope: this.scene, loop: false });
         }else{
             // this.car.alpha = 1;
         }
         if(this.object.y > game.config.height){ //모두 피하고 화면밖으로 벗어나면
-            emitter.emit(G.UP_POINTS,10);
+            emitter.emit(G.UP_POINTS,13);
             this.object.destroy();
             this.addObject();
         }
