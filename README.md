@@ -3,7 +3,7 @@
 
 ![image](https://user-images.githubusercontent.com/40741363/222675493-7210bb0e-dd22-4681-8ab6-f151d93306a3.png)
 
-📌 배포 링크(PC/모바일)
+### 📌 배포 링크(PC/모바일)
 https://want-game.netlify.app
 
 ### 게임방법
