@@ -28,16 +28,16 @@ class Road extends Phaser.GameObjects.Container{
     }
     addObject(){
         var objs=[
-            {key:'pcar1', speed:8, scale:8},
-            {key:'pcar2', speed:8, scale:8},
+            {key:'pcar1', speed:6, scale:8},
+            {key:'pcar2', speed:6, scale:8},
             {key:'cone', speed:5, scale:5},
-            {key:'barrier', speed:5, scale:8},
-            {key:'img1', speed:5, scale:20},
+            {key:'barrier', speed:3, scale:8},
+            {key:'img1', speed:3, scale:18},
             {key:'img2', speed:6, scale:15},
-            {key:'img3', speed:8, scale:20},
-            {key:'img4', speed:8, scale:20},
-            {key:'img5', speed:6, scale:18},
-            {key:'img6', speed:8, scale:20}
+            {key:'img3', speed:6, scale:20},
+            {key:'img4', speed:7, scale:20},
+            {key:'img5', speed:4, scale:17},
+            {key:'img6', speed:7, scale:18}
         ];
 
         var index = Math.floor(Math.random()*10);
