@@ -3,6 +3,8 @@ class SceneLoad extends Phaser.Scene {
         super('SceneLoad');
     }
     preload(){
+        this.load.setBaseURL("https://want-game.netlify.app");
+
         this.bar = new Bar({scene:this, x:game.config.width/3,y:game.config.height/2});
         this.progText = this.add.text(game.config.width/2, game.config.height/2,"0%",{color:'#fff', fontSize:game.config.width/20});
         this.progText.setOrigin(0.5,0.5); //화면 정중앙 배치
@@ -30,6 +32,8 @@ class SceneLoad extends Phaser.Scene {
         this.load.image("sfxOn", "/phaser-rapid_game/images/ui/icons/sfx_on.png");
         this.load.image("musicOn", "/phaser-rapid_game/images/ui/icons/music_on.png");
         this.load.image("musicOff", "/phaser-rapid_game/images/ui/icons/music_off.png");
+
+        this.load.bitmapFont("pixelFont", "/phaser-rapid_game/font/font.xml");   
     }
     onProgress(value){
         console.log(value);
