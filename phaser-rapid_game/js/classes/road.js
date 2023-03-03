@@ -32,9 +32,9 @@ class Road extends Phaser.GameObjects.Container{
             {key:'pcar2', speed:22, scale:10},
             {key:'cone', speed:20, scale:5},
             {key:'barrier', speed:20, scale:8},
-            {key:'img1', speed:8, scale:20},
-            {key:'img2', speed:18, scale:15},
-            {key:'img3', speed:10, scale:20},
+            {key:'img1', speed:5, scale:20},
+            {key:'img2', speed:15, scale:15},
+            {key:'img3', speed:8, scale:20},
             {key:'img4', speed:22, scale:20},
             {key:'img5', speed:6, scale:20},
             {key:'img6', speed:8, scale:20}
