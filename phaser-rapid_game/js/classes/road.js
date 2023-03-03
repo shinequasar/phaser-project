@@ -28,19 +28,19 @@ class Road extends Phaser.GameObjects.Container{
     }
     addObject(){
         var objs=[
-            {key:'pcar1', speed:6, scale:8},
-            {key:'pcar2', speed:6, scale:8},
-            {key:'cone', speed:5, scale:5},
-            {key:'barrier', speed:3, scale:8},
-            {key:'img1', speed:3, scale:18},
-            {key:'img2', speed:6, scale:15},
-            {key:'img3', speed:6, scale:20},
-            {key:'img4', speed:7, scale:20},
-            {key:'img5', speed:4, scale:17},
-            {key:'img6', speed:7, scale:18}
+            {key:'pcar1', speed:30, scale:8},
+            {key:'pcar2', speed:30, scale:8},
+            {key:'cone', speed:20, scale:5},
+            {key:'barrier', speed:20, scale:8},
+            {key:'img1', speed:43, scale:18},
+            {key:'img2', speed:30, scale:15},
+            {key:'img3', speed:40, scale:20},
+            {key:'img4', speed:30, scale:20},
+            {key:'img5', speed:40, scale:17},
+            {key:'img6', speed:30, scale:18}
         ];
 
-        var index = Math.floor(Math.random()*10);
+        var index = Math.floor(Math.random()*9);
         var key = objs[index].key;
         var speed = objs[index].speed;
         var scale = objs[index].scale/100;
