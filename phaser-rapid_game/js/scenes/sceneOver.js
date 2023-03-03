@@ -4,6 +4,7 @@ class SceneOver extends Phaser.Scene {
     }
     preload()
     {
+        // this.load.setBaseURL("https://want-game.netlify.app");
     	this.load.image("title","/phaser-rapid_game/images/title.png")
         this.load.image("gameover", "/phaser-rapid_game/images/gameover.png");
         this.load.image("button1","/phaser-rapid_game/images/ui/buttons/2/2.png");

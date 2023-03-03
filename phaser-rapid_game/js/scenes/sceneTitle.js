@@ -4,7 +4,7 @@ class SceneTitle extends Phaser.Scene {
     }
     preload()
     {
-        this.load.setBaseURL("https://want-game.netlify.app");
+        // this.load.setBaseURL("https://want-game.netlify.app");
     	this.load.image("title","/phaser-rapid_game/images/title.png")
         this.load.image("button1","/phaser-rapid_game/images/ui/buttons/2/4.png");
         this.load.image("button2","/phaser-rapid_game/images/ui/buttons/2/5.png");

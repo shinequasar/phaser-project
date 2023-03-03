@@ -3,7 +3,7 @@ class SceneLoad extends Phaser.Scene {
         super('SceneLoad');
     }
     preload(){
-        this.load.setBaseURL("https://want-game.netlify.app");
+        // this.load.setBaseURL("https://want-game.netlify.app");
 
         this.bar = new Bar({scene:this, x:game.config.width/3,y:game.config.height/2});
         this.progText = this.add.text(game.config.width/2, game.config.height/2,"0%",{color:'#fff', fontSize:game.config.width/20});
