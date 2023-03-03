@@ -27,16 +27,17 @@ class Road extends Phaser.GameObjects.Container{
         this.back.on('pointerdown', this.chageLanes, this); //게임 오브젝트에서 히트 영역 설정
     }
     addObject(){
+        //speed가 클수록 느림
         var objs=[
-            {key:'pcar1', speed:30, scale:8},
-            {key:'pcar2', speed:30, scale:8},
+            {key:'pcar1', speed:15, scale:8},
+            {key:'pcar2', speed:15, scale:8},
             {key:'cone', speed:20, scale:5},
             {key:'barrier', speed:20, scale:8},
-            {key:'img1', speed:43, scale:18},
+            {key:'img1', speed:33, scale:18},
             {key:'img2', speed:30, scale:15},
-            {key:'img3', speed:40, scale:20},
-            {key:'img4', speed:30, scale:20},
-            {key:'img5', speed:40, scale:17},
+            {key:'img3', speed:25, scale:20},
+            {key:'img4', speed:17, scale:20},
+            {key:'img5', speed:25, scale:17},
             {key:'img6', speed:30, scale:18}
         ];
 
