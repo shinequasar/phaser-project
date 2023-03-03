@@ -27,6 +27,11 @@ class SceneOver extends Phaser.Scene {
         this.alignGrid.placeAtIndex(104,btnStart);
         
         emitter.on('start_game', this.startGame, this);
+
+        this.sb = new ScoreBox({scene:this});
+        this.sb.x = game.config.width/2;
+        this.sb.y = 120;
+        emitter.emit(G.SCORE_UPDATED, this.scoreUpdated, this);
     }
     startGame(){
         this.scene.start('SceneMain');

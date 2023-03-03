@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+        "baseUrl": "https://want-game.netlify.app"
+    }
+    // ,
+    // "include": [
+    //     "src"
+    // ]
+}

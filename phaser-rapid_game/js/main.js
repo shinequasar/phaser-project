@@ -14,7 +14,7 @@ window.onload = () => {
         var config = {
             type: Phaser.AUTO,
             width: 680 ,
-            height: 840,
+            height: 800,
             parent: 'phaser-game',
             backgroundColor: '#555',
             scene: [SceneLoad,SceneTitle,SceneMain,SceneOver]

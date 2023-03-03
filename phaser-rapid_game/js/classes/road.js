@@ -17,7 +17,7 @@ class Road extends Phaser.GameObjects.Container{
         this.count = 0;
         //displayWidth 음수면 왼쪽 차선
         this.car = this.scene.add.sprite(this.displayWidth/4, game.config.height*.9,"cars"); 
-        Align.scaleToGameW(this.car, .15); //차 크기
+        Align.scaleToGameW(this.car, .1); //차 크기
         this.add(this.car);
         this.addObject();
 
