@@ -40,7 +40,7 @@ class Road extends Phaser.GameObjects.Container{
             {key:'img6', speed:20, scale:8}
         ];
 
-        var index = Math.floor(Math.random()*4);
+        var index = Math.floor(Math.random()*10);
         var key = objs[index].key;
         var speed = objs[index].speed;
         var scale = objs[index].scale/100;

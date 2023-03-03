@@ -26,12 +26,10 @@ class SceneLoad extends Phaser.Scene {
         this.load.image("img5", "/images/fun/img5.jpg");
         this.load.image("img6", "/images/fun/img6.png");
 
-
  
         this.load.image("button1","/images/ui/buttons/2/4.png");
         this.load.image("button2","/images/ui/buttons/2/5.png");
  
-        this.load.audio("cat",["/audio/meow.mp3","/phaser-rapid_game/audio/meow.ogg"]);
         this.load.audio("backgroundMusic",["/audio/background.mp3","/audio/background.ogg"]);
         this.load.audio("boom",["/audio/boom.mp3","/audio/boom.ogg"]);
         this.load.audio("whoosh",["/audio/whoosh.mp3","/audio/whoosh.ogg"]);

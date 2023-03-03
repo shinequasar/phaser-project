@@ -22,7 +22,7 @@ class MediaManager{
     playSFXSound(key){
         if(model._soundOn == true){
             const sound = this.scene.sound.add(key);
-            sound.setVolume(0.03);
+            sound.setVolume(0.04);
             sound.play();
         }
     }
