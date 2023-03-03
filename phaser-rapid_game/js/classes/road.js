@@ -17,7 +17,7 @@ class Road extends Phaser.GameObjects.Container{
         this.count = 0;
         //displayWidth 음수면 왼쪽 차선
         this.car = this.scene.add.sprite(this.displayWidth/4, game.config.height*.9,"cars"); 
-        Align.scaleToGameW(this.car, .1); //차 크기
+        Align.scaleToGameW(this.car, .08); //차 크기
         this.add(this.car);
         this.addObject();
 
@@ -28,14 +28,14 @@ class Road extends Phaser.GameObjects.Container{
     }
     addObject(){
         var objs=[
-            {key:'pcar1', speed:22, scale:10},
-            {key:'pcar2', speed:22, scale:10},
+            {key:'pcar1', speed:15, scale:10},
+            {key:'pcar2', speed:15, scale:10},
             {key:'cone', speed:20, scale:5},
             {key:'barrier', speed:20, scale:8},
             {key:'img1', speed:5, scale:20},
-            {key:'img2', speed:15, scale:15},
+            {key:'img2', speed:12, scale:15},
             {key:'img3', speed:8, scale:20},
-            {key:'img4', speed:22, scale:20},
+            {key:'img4', speed:8, scale:20},
             {key:'img5', speed:6, scale:20},
             {key:'img6', speed:8, scale:20}
         ];
