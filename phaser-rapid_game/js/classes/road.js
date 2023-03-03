@@ -96,7 +96,7 @@ class Road extends Phaser.GameObjects.Container{
             this.scene.time.addEvent({ delay: 1200, callback: this.goGameOver, callbackScope: this.scene, loop: false });
         }else{
             // this.car.alpha = 1;
-            emitter.emit(G.UP_POINTS,0.1);
+            emitter.emit(G.UP_POINTS,0.2);
         }
         if(this.object.y > game.config.height){ //모두 피하고 화면밖으로 벗어나면
             this.object.destroy();
