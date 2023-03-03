@@ -28,10 +28,10 @@ class Road extends Phaser.GameObjects.Container{
     }
     addObject(){
         var objs=[
-            {key:'pcar1', speed:15, scale:8},
-            {key:'pcar2', speed:15, scale:8},
-            {key:'cone', speed:15, scale:5},
-            {key:'barrier', speed:15, scale:8},
+            {key:'pcar1', speed:10, scale:8},
+            {key:'pcar2', speed:10, scale:8},
+            {key:'cone', speed:12, scale:5},
+            {key:'barrier', speed:12, scale:8},
             {key:'img1', speed:5, scale:20},
             {key:'img2', speed:12, scale:15},
             {key:'img3', speed:8, scale:20},
@@ -40,7 +40,7 @@ class Road extends Phaser.GameObjects.Container{
             {key:'img6', speed:8, scale:20}
         ];
 
-        var index = Math.floor(Math.random()*10);
+        var index = Math.floor(Math.random()*9);
         var key = objs[index].key;
         var speed = objs[index].speed;
         var scale = objs[index].scale/100;
@@ -70,7 +70,7 @@ class Road extends Phaser.GameObjects.Container{
     }
     moveLines(){
         this.lineGroup.children.iterate(function(child){
-            child.y+=this.vSpace/18;  //속도조절
+            child.y+=this.vSpace/21;  //속도조절
         }.bind(this)); //this가 scene을 가리키도록 함
         this.count++;
         if(this.count == 20){
