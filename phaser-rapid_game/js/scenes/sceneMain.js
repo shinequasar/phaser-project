@@ -39,8 +39,8 @@ class SceneMain extends Phaser.Scene {
     scoreUpdated(){ 
       if(model.score/5 == Math.floor(model.score/5)){
         model.speed+=0.25;
-        if(model.speed>1.5)//장애물 속도 상한선
-            model.speed=1.5;
+        if(model.speed>1.3)//장애물 속도 상한선
+            model.speed=1.3;
       }
     }
     update(){
