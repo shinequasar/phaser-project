@@ -13,11 +13,20 @@ class SceneLoad extends Phaser.Scene {
         this.load.image("road", "/images/road.jpg");
         this.load.image("titleBack", "/images/titleBack.jpg");
         this.load.spritesheet("cars", "/images/cars.png",{frameWidth:60, frameHeight:126});
+
         this.load.image("line", "/images/line.png");
         this.load.image("pcar1", "/images/pcar1.png");
         this.load.image("pcar2", "/images/pcar2.png");
         this.load.image("cone", "/images/cone.png");
         this.load.image("barrier", "/images/barrier.png");
+        this.load.image("img1", "/images/fun/img1.png");
+        this.load.image("img2", "/images/fun/img2.PNG");
+        this.load.image("img3", "/images/fun/img3.png");
+        this.load.image("img4", "/images/fun/img4.png");
+        this.load.image("img5", "/images/fun/img5.jpg");
+        this.load.image("img6", "/images/fun/img6.png");
+
+
  
         this.load.image("button1","/images/ui/buttons/2/4.png");
         this.load.image("button2","/images/ui/buttons/2/5.png");
