@@ -15,6 +15,9 @@ https://want-game.netlify.app
 - Phaser3, JS
 - Netlify, github
 
+### 개발 기간
+- 2023/2/27 - 2023/3/3 (5일)
+
 
 ### 목적
 - phaser3 엔진 사용전, 기능파악 및 기록을 위한 레포입니다.
