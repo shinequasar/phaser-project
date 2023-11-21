@@ -36,7 +36,14 @@
 </head>
 <body>
     <div id='phaser-game'></div>
-    <h3 id="title">화면을 클릭해서 모든 장애물들을피하세요!</h1>
+    <h3 id="title">화면을 클릭해서 모든 장애물들을피하세요!</h3>
+        <div id="kakao_ad_area">
+            <ins class="kakao_ad_area" style="display:none;"
+                 data-ad-unit = "DAN-c4qX8EtcXW5Sn4jB"
+                 data-ad-width = "320"
+                 data-ad-height = "50"></ins>
+            <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+        </div>
     <!-- <h3 id="title">💛 피할 수 있을까💛</h1> -->
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5486156534698508"
       crossorigin="anonymous"></script>
@@ -49,6 +56,10 @@
 }
 #phaser-game{
     text-align: center;
+}
+#kakao_ad_area{
+    width: 70vw;
+    margin: 0 auto;
 }
 body{
     background-color: darkgray;
